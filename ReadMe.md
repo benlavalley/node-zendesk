@@ -145,6 +145,8 @@ requestUpload(uri, file, fileToken, callback)
 
 When using the `requestAll` method, the client automatically pages-through results, accumulating all responses before returning them to the `cb` method. To monitor pagination, the `cb` parameter can also be an [observer](http://reactivex.io/rxjs/manual/overview.html#observer) – see [this example](examples/ticket-list-observer.js).
 
+If you wish to resume a request from a given page, simply update the observer object to set an "initPage" variable which is the page number you wish to resume from, or set it to the full page you wish to request (e.g. "https://yoursubdomain.zendesk.com/api/v2/users.json?page=102").
+
 ## Core API Methods
 (See: https://developer.zendesk.com/rest_api/docs/core/introduction)
 
